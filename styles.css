@@ -8,6 +8,8 @@
   --background-coloring: #d1d5db;
   --theme-color: #1e293b;
   --search-bar-color: #c7d2fe;
+  --card-color: #fafaf9;
+  --gray-text-color: #64748b;
 }
 
 @font-face {
@@ -54,10 +56,16 @@ body {
 .content-area {
   grid-column: 2 / 4;
   background-color: var(--background-coloring);
+  padding: 18px 20px;
+  padding-left: 40px;
 }
 
 .misc {
-  background-color: var(--background-coloring)
+  padding: 18px 20px;
+  padding-right: 40px;
+  background-color: var(--background-coloring);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .top-part {
@@ -198,6 +206,108 @@ p:nth-child(3) {
 }
 
 .card {
-  border: solid;
-  
+  font-size: 0.9rem;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px var(--theme-color);
+  background-color: var(--card-color);
+  display: grid;
+  grid-template-rows: 0.7fr 3fr 0.5fr;
+  min-width: 250px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.card-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  height: 95%;
+  margin-top: 5px;
+}
+
+.card .icons {
+  justify-self: end;
+}
+
+.announcements {
+  margin-top: 5px;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  justify-items: center;
+  margin-bottom: 10px;  
+}
+
+.announcements-container, 
+.trending-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote > div {
+  font-size: 0.9rem;
+  color: var(--gray-text-color)
+}
+
+.h5 {
+  font-size: 1.3rem;
+}
+
+.quote-1 {
+  border-bottom: solid 0.5px var(--search-bar-color);
+}
+
+.quote-2 {
+  border-bottom: solid 0.5px var(--search-bar-color);
+}
+
+.small-img-trending {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.character {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 0.5fr 2fr;
+}
+
+.trending {
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 13px;
+  margin-top: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.trending-container {
+  margin-top: 8px;
+}
+
+.character-details > p {
+  font-size: 0.9rem;
+}
+
+.character-details > div {
+  font-size: 1rem;
+  color: var(--gray-text-color);
 }

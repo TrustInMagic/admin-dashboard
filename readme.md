@@ -1,6 +1,6 @@
 # admin-dashboard 
 
-Live at: 
+Live at: https://trustinmagic.github.io/admin-dashboard/
 
 Admin dash board made with Grid and Flexbox
 

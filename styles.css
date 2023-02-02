@@ -4,29 +4,47 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-coloring: #d1d5db;
+  --theme-color: #1e293b;
+  --search-bar-color: #c7d2fe;
+}
+
 @font-face {
   font-family: star-wars;
   src: url(./fonts/Star\ Wars.ttf);
 }
 
+@font-face {
+  font-family: roboto;
+  src: url(./fonts/Roboto-Regular.ttf);
+}
+
 body {
-  font-family: ;
+  font-family: roboto;
 }
 
 .layout-container {
   height: 100vh;
   display: grid;
-  grid-template-columns: 0.6fr 1fr 1fr 0.6fr;
-  grid-template-rows: 0.7fr 4fr;
+  grid-template-columns: 0.5fr 1fr 1fr 0.6fr;
+  grid-template-rows: 0.6fr 4fr;
 }
 
 .header {
   grid-column: 2 / 5;
+  display: grid;
+  grid-template-columns: 2fr 0.7fr;
+  grid-template-rows: 1fr 2fr;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 1px 7px 10px var(--search-bar-color); 
+  z-index: 1;
 }
 
 .sidebar {
   font-family: star-wars;
-  background-color: #1e293b;
+  background-color: var(--theme-color);
   color: white;
   grid-row: 1 / 3;
   display: grid;
@@ -35,10 +53,11 @@ body {
 
 .content-area {
   grid-column: 2 / 4;
+  background-color: var(--background-coloring);
 }
 
 .misc {
-
+  background-color: var(--background-coloring)
 }
 
 .top-part {
@@ -60,7 +79,7 @@ body {
 
 .dashboard {
   margin: 0 20px;
-  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +96,11 @@ body {
   position: relative;
   top: 5px;
   margin-right: 8px;
-  
+}
+
+.black-icon {
+  height: 25px;
+  cursor: pointer;
 }
 
 .top-part > div,
@@ -87,3 +110,94 @@ body {
   font-size: clamp(0.8rem, 1.8vw, 1rem)
 }
 
+.yoda-small {
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.yoda-large {
+  height: 80px;
+  grid-row: 1 / 3;
+  border-radius: 50%;
+  border: solid 3px var(--search-bar-color)
+}
+
+.small-profile {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  font-weight: 600;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-buttons > button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--theme-color);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+}
+
+input[name="search"] {
+  flex: 1;
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--search-bar-color);
+  border-radius: 8px;
+  height: 20px;
+  font-family: inherit;
+}
+
+input[name="search"]:active,
+input[name="search"]:focus {
+  box-shadow: 2px 2px 2px var(--theme-color);
+}
+
+.search-icon {
+  height: 32px;
+  cursor: pointer;
+}
+
+.large-profile {
+  display: grid;
+  grid-template-columns: 1fr 15fr;
+  align-items: center;
+  column-gap: 10px;
+}
+
+
+.yoda-large + p {
+  font-size: 1.1rem;
+  margin-bottom: -20px;
+}
+
+p:nth-child(3) {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card {
+  border: solid;
+  
+}

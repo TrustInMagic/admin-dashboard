@@ -104,6 +104,7 @@ body {
   position: relative;
   top: 5px;
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .black-icon {
@@ -111,11 +112,26 @@ body {
   cursor: pointer;
 }
 
+.black-icon:active {
+  transform: scale(0.9);
+}
+
+.top-part > div:active,
+.bottom-part > div:active,
+.yoda-small:active {
+  transform: scale(0.98);
+}
+
 .top-part > div,
 .bottom-part > div {
   margin-left: 5%;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
   cursor: pointer;
-  font-size: clamp(0.8rem, 1.8vw, 1rem)
+}
+
+.top-part > div:hover,
+.bottom-part > div:hover {
+  color: var(--search-bar-color);
 }
 
 .yoda-small {
@@ -214,6 +230,12 @@ p:nth-child(3) {
   display: grid;
   grid-template-rows: 0.7fr 3fr 0.5fr;
   min-width: 250px;
+  border-left: 15px solid var(--search-bar-color);
+}
+
+.card:hover {
+  transform: scale(1.01);
+  transition: .3s;
 }
 
 h1 {
@@ -234,19 +256,19 @@ h1 {
   justify-self: end;
 }
 
-.announcements {
+.quotes {
   margin-top: 5px;
   background-color: var(--card-color);
   border-radius: 10px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 13px;
+  padding: 30px;
   justify-items: center;
   margin-bottom: 10px;  
 }
 
-.announcements-container, 
+.quotes-container, 
 .trending-container {
   display: flex;
   flex-direction: column;
@@ -285,13 +307,14 @@ h1 {
 .character {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 0.5fr 2fr;
+  grid-template-columns: 1fr 15fr;
+  column-gap: 6px;
 }
 
 .trending {
   background-color: var(--card-color);
   border-radius: 10px;
-  padding: 13px;
+  padding: 30px;
   margin-top: 5px;
   flex: 1;
   display: flex;
